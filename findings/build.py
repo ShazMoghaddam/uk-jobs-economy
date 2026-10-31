@@ -5,8 +5,9 @@ Run from the repository root after data/fetch.py:
     python findings/build.py
 
 Charts go into charts/ as SVG files, made with bezel-charts (https://pypi.org/project/bezel-charts/).
-The report is written to findings/README.md, with every number worked out from the data, so it
-stays true when ONS publishes new figures. Nothing in the report is typed in by hand.
+The report is written to findings/README.md, and the headline tiles and key findings in the main README
+are rewritten between their marker comments. Every number is worked out from the data, so it stays true
+when ONS publishes new figures. Nothing in them is typed in by hand.
 """
 
 from __future__ import annotations
@@ -25,6 +26,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 CHARTS = ROOT / "charts"
 REPORT = ROOT / "findings" / "README.md"
+README = ROOT / "README.md"
 
 THEME = {"theme": "light"}
 WIDE = 760
@@ -289,6 +291,30 @@ def trust(lm: pd.DataFrame, pay: pd.Series) -> dict:
 
 # The report ----------------------------------------------------------------------------------
 
+TILE_ROWS = [
+    [("unemployment", "Unemployment rate"), ("inactivity", "Economic inactivity rate"), ("youth", "Youth unemployment rate")],
+    [("employment", "Employment rate"), ("vacancies", "Job vacancies"), ("real-pay", "Real pay growth")],
+]
+
+
+def tile_rows(tiles: dict, base: str = "../") -> str:
+    """The six tiles as two rows of three. Each row is its own paragraph, and the images have a fixed
+    pixel width, which GitHub keeps side by side (it drops percentage widths, which stacks them)."""
+    rows = []
+    for row in TILE_ROWS:
+        imgs = "\n".join(
+            f'  <img src="{base}{tiles[key].removeprefix("../")}" width="270" alt="{alt} over the last three years">'
+            for key, alt in row
+        )
+        rows.append(f'<p align="center">\n{imgs}\n</p>')
+    return "\n\n".join(rows)
+
+
+CREDIT = (
+    "Charts are drawn with [bezel-charts](https://pypi.org/project/bezel-charts/), an open-source Python library "
+    "created by Shaz Moghaddam, the author of this project."
+)
+
 def write_report(f: dict, sources: dict) -> str:
     h, lr, t, ina, rp, rg, ag, ph, tr = (f[k] for k in
                                          ("tiles", "long", "tight", "inactive", "pay", "regions", "ages", "phillips", "trust"))
@@ -330,24 +356,18 @@ def write_report(f: dict, sources: dict) -> str:
     gap_pre = young_pre - sum(others_pre) / len(others_pre)
     gap_line = "But the gap has grown since Covid." if gap_now > gap_pre + 0.3 else (
         "The gap has narrowed since Covid." if gap_now < gap_pre - 0.3 else "The gap is about the same as before Covid.")
-    tile = lambda key, alt: f'<img src="{h[key]}" width="32%" alt="{alt}">'  # noqa: E731
+    tiles_html = tile_rows(h)
 
     lines = f"""# State of UK jobs
 
 **Latest data: {window(u_when)}.** Every number and chart on this page is worked out from ONS data by
-[`build.py`](build.py), and redrawn automatically when ONS publishes new figures. Charts are made with
-[bezel-charts](https://pypi.org/project/bezel-charts/).
+[`build.py`](build.py), and redrawn automatically when ONS publishes new figures. {CREDIT}
 
 Data last downloaded: {sources['fetched']}.
 
 ## 1. The headline numbers
 
-{tile('unemployment', 'Unemployment rate over the last three years')}
-{tile('employment', 'Employment rate over the last three years')}
-{tile('inactivity', 'Economic inactivity rate over the last three years')}
-{tile('youth', 'Youth unemployment rate over the last three years')}
-{tile('vacancies', 'Job vacancies over the last three years')}
-{tile('real-pay', 'Real pay growth over the last three years')}
+{tiles_html}
 
 Each tile shows the last three years. The big number is the latest figure.
 
@@ -490,6 +510,65 @@ Series IDs and links are in [`data/sources.json`](../data/sources.json).
     return lines
 
 
+def key_findings(f: dict) -> str:
+    """The four strongest findings for the front page, with numbers from the latest data."""
+    ina, ag, t, tr = f["inactive"], f["ages"], f["tight"], f["trust"]
+    lts_now, lts_pre = ina["now"]["Long-term sick"], ina["pre"]["Long-term sick"]
+    young_now, young_pre = ag["now"]["16 to 24"], ag["pre"]["16 to 24"]
+    chart = lambda path: path.removeprefix("../")  # noqa: E731
+    lts_dir = "up" if lts_now >= lts_pre else "down"
+    older = [v for k, v in ag["now"].items() if k != "16 to 24"]
+    young_heading = ("Young people are finding it harder to get a start" if young_now > young_pre + 0.5
+                     else "How young people are doing")
+    biggest_line = (
+        "It's now the biggest single reason people aged 16 to 64 aren't working or looking for work."
+        if max(ina["now"], key=ina["now"].get) == "Long-term sick"
+        else "It's one of the biggest reasons people aged 16 to 64 aren't working or looking for work."
+    )
+    young_dir = "up from" if young_now > young_pre else "down from" if young_now < young_pre else "the same as"
+    return f"""### {thousands(lts_now).capitalize()} people are out of work because of long-term sickness
+
+That's {lts_dir} {abs(lts_now - lts_pre):,.0f},000 since just before Covid. {biggest_line}
+
+![Inactive people by reason, then and now]({chart(ina['compare'])})
+
+### {young_heading}
+
+Among 16 to 24 year olds who are working or looking for work, **{young_now:.1f}%** are unemployed, {young_dir}
+{young_pre:.1f}% just before Covid. For older age groups the rate is between {min(older):.1f}% and {max(older):.1f}%.
+
+![Unemployment by age]({chart(ag['chart'])})
+
+### The jobs market has cooled
+
+There are **{t['now']:.2f}** vacancies for every unemployed person, against {t['pre']:.2f} just before Covid and a record
+{t['peak'][1]:.2f} in {mon(t['peak'][0])}.
+
+![Vacancies per unemployed person]({chart(t['chart'])})
+
+### Two official sources disagree
+
+The Labour Force Survey says {tr['lfs_change'] / 1e6:.2f} million more people are in work than before Covid. HMRC payroll
+records peaked in {mon(tr['pay_peak'][0])} and have {'fallen' if tr['since_peak'] < 0 else 'risen'} by
+{abs(tr['since_peak']) / 1000:,.0f},000 since. Which should you believe?
+
+![Survey against payroll]({chart(tr['chart'])})"""
+
+
+def update_readme(f: dict) -> None:
+    """Rewrite the generated parts of the main README, between their marker comments."""
+    text = README.read_text(encoding="utf-8")
+    blocks = {"tiles": tile_rows(f["tiles"], base=""), "key-findings": key_findings(f)}
+    for name, body in blocks.items():
+        start, end = f"<!-- {name}:start -->", f"<!-- {name}:end -->"
+        if start not in text or end not in text:
+            raise RuntimeError(f"README.md is missing the {start} ... {end} markers")
+        before, rest = text.split(start, 1)
+        _, after = rest.split(end, 1)
+        text = f"{before}{start}\n{body}\n{end}{after}"
+    README.write_text(text, encoding="utf-8")
+
+
 def main() -> None:
     # bezel-charts gives each gradient a random id so charts can share a page. A fixed seed keeps the
     # files identical from one run to the next, so only real changes in the data show up in git.
@@ -508,7 +587,8 @@ def main() -> None:
         "trust": trust(lm, pay),
     }
     REPORT.write_text(write_report(findings, sources), encoding="utf-8")
-    print(f"Saved {len(list(CHARTS.glob('*.svg')))} charts to {CHARTS} and the report to {REPORT}")
+    update_readme(findings)
+    print(f"Saved {len(list(CHARTS.glob('*.svg')))} charts to {CHARTS}, the report to {REPORT}, and updated {README}")
 
 
 if __name__ == "__main__":

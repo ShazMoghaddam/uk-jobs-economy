@@ -1,19 +1,23 @@
 # State of UK jobs
 
 **Latest data: Jun to Aug 2026.** Every number and chart on this page is worked out from ONS data by
-[`build.py`](build.py), and redrawn automatically when ONS publishes new figures. Charts are made with
-[bezel-charts](https://pypi.org/project/bezel-charts/).
+[`build.py`](build.py), and redrawn automatically when ONS publishes new figures. Charts are drawn with [bezel-charts](https://pypi.org/project/bezel-charts/), an open-source Python library created by Shaz Moghaddam, the author of this project.
 
 Data last downloaded: 2026-10-31 13:20 UTC.
 
 ## 1. The headline numbers
 
-<img src="../charts/tile-unemployment.svg" width="32%" alt="Unemployment rate over the last three years">
-<img src="../charts/tile-employment.svg" width="32%" alt="Employment rate over the last three years">
-<img src="../charts/tile-inactivity.svg" width="32%" alt="Economic inactivity rate over the last three years">
-<img src="../charts/tile-youth.svg" width="32%" alt="Youth unemployment rate over the last three years">
-<img src="../charts/tile-vacancies.svg" width="32%" alt="Job vacancies over the last three years">
-<img src="../charts/tile-real-pay.svg" width="32%" alt="Real pay growth over the last three years">
+<p align="center">
+  <img src="../charts/tile-unemployment.svg" width="270" alt="Unemployment rate over the last three years">
+  <img src="../charts/tile-inactivity.svg" width="270" alt="Economic inactivity rate over the last three years">
+  <img src="../charts/tile-youth.svg" width="270" alt="Youth unemployment rate over the last three years">
+</p>
+
+<p align="center">
+  <img src="../charts/tile-employment.svg" width="270" alt="Employment rate over the last three years">
+  <img src="../charts/tile-vacancies.svg" width="270" alt="Job vacancies over the last three years">
+  <img src="../charts/tile-real-pay.svg" width="270" alt="Real pay growth over the last three years">
+</p>
 
 Each tile shows the last three years. The big number is the latest figure.
 

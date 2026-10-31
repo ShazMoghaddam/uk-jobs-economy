@@ -35,7 +35,8 @@ ageing workforce, long NHS waiting lists, more mental health conditions, long Co
 job is to dig into it.
 
 *Both charts are made from this repo's data by [`make_charts.py`](make_charts.py), with
-[bezel-charts](https://pypi.org/project/bezel-charts/).*
+[bezel-charts](https://pypi.org/project/bezel-charts/), an open-source Python library created by Shaz Moghaddam,
+who runs this challenge.*
 
 ---
 

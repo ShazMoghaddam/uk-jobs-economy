@@ -14,20 +14,66 @@ This project does two things:
 2. **It asks you questions.** Each month there's a new challenge. Dig into the data, make something and share it.
    No sign-up and no gatekeeping. Beginners are very welcome.
 
+> 📈 **Every chart here is drawn with [bezel-charts](https://pypi.org/project/bezel-charts/), an open-source Python
+> library created by Shaz Moghaddam, the author of this project.** It turns pandas data into clean, self-contained
+> SVG charts in one line. `pip install bezel-charts` · [PyPI](https://pypi.org/project/bezel-charts/) ·
+> [GitHub](https://github.com/ShazMoghaddam/bezel-charts)
+
 ---
 
 ## Right now
 
-<img src="charts/tile-unemployment.svg" width="32%" alt="Unemployment rate over the last three years">
-<img src="charts/tile-inactivity.svg" width="32%" alt="Economic inactivity rate over the last three years">
-<img src="charts/tile-youth.svg" width="32%" alt="Youth unemployment rate over the last three years">
-<img src="charts/tile-employment.svg" width="32%" alt="Employment rate over the last three years">
-<img src="charts/tile-vacancies.svg" width="32%" alt="Job vacancies over the last three years">
-<img src="charts/tile-real-pay.svg" width="32%" alt="Real pay growth over the last three years">
+<!-- tiles:start -->
+<p align="center">
+  <img src="charts/tile-unemployment.svg" width="270" alt="Unemployment rate over the last three years">
+  <img src="charts/tile-inactivity.svg" width="270" alt="Economic inactivity rate over the last three years">
+  <img src="charts/tile-youth.svg" width="270" alt="Youth unemployment rate over the last three years">
+</p>
+
+<p align="center">
+  <img src="charts/tile-employment.svg" width="270" alt="Employment rate over the last three years">
+  <img src="charts/tile-vacancies.svg" width="270" alt="Job vacancies over the last three years">
+  <img src="charts/tile-real-pay.svg" width="270" alt="Real pay growth over the last three years">
+</p>
+<!-- tiles:end -->
 
 *The latest figures, with the last three years behind them. Updated automatically from the ONS.*
 
-**[Read the full State of UK jobs report →](findings/README.md)**
+---
+
+## Key findings
+
+<!-- key-findings:start -->
+### 2.74 million people are out of work because of long-term sickness
+
+That's up 620,000 since just before Covid. It's now the biggest single reason people aged 16 to 64 aren't working or looking for work.
+
+![Inactive people by reason, then and now](charts/inactivity-then-and-now.svg)
+
+### Young people are finding it harder to get a start
+
+Among 16 to 24 year olds who are working or looking for work, **15.6%** are unemployed, up from
+11.8% just before Covid. For older age groups the rate is between 2.7% and 4.1%.
+
+![Unemployment by age](charts/unemployment-by-age.svg)
+
+### The jobs market has cooled
+
+There are **0.41** vacancies for every unemployed person, against 0.59 just before Covid and a record
+1.02 in Jul 2022.
+
+![Vacancies per unemployed person](charts/vacancies-per-unemployed.svg)
+
+### Two official sources disagree
+
+The Labour Force Survey says 1.40 million more people are in work than before Covid. HMRC payroll
+records peaked in Oct 2024 and have fallen by
+181,000 since. Which should you believe?
+
+![Survey against payroll](charts/survey-vs-payroll.svg)
+<!-- key-findings:end -->
+
+**[Read all eight findings in the State of UK jobs report →](findings/README.md)**
 
 | # | Finding | |
 |---|---|---|
@@ -87,7 +133,8 @@ python3 findings/build.py    # redraw every chart and rewrite the report
 ```
 
 Every chart is drawn with [bezel-charts](https://pypi.org/project/bezel-charts/), a small open-source Python
-library that turns pandas data into clean SVG charts.
+library by the same author, Shaz Moghaddam. It also comes as web components for websites:
+[github.com/ShazMoghaddam/bezel-charts](https://github.com/ShazMoghaddam/bezel-charts).
 
 ---
 
