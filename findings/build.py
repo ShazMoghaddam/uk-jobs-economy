@@ -12,6 +12,7 @@ stays true when ONS publishes new figures. Nothing in the report is typed in by 
 from __future__ import annotations
 
 import json
+import math
 import random
 from pathlib import Path
 
@@ -33,8 +34,8 @@ PRE_PANDEMIC = "2020-01"  # LFS figures for December 2019 to February 2020
 # Loading -------------------------------------------------------------------------------------
 
 def load() -> tuple[pd.DataFrame, pd.Series, dict]:
-    lm = pd.read_csv(DATA / "labour_market.csv", parse_dates=["date"]).set_index("date")
-    pay = pd.read_csv(DATA / "payrolled_employees.csv", parse_dates=["date"]).set_index("date")["payrolled_employees"]
+    lm = pd.read_csv(DATA / "labour_market.csv", parse_dates=["date"], date_format="%Y-%m").set_index("date")
+    pay = pd.read_csv(DATA / "payrolled_employees.csv", parse_dates=["date"], date_format="%Y-%m").set_index("date")["payrolled_employees"]
     sources = json.loads((DATA / "sources.json").read_text(encoding="utf-8"))
     return lm, pay, sources
 
@@ -90,9 +91,14 @@ def axis(labels: list[str]) -> list[str]:
 
 
 def annual(series: pd.Series) -> pd.Series:
+    """Yearly averages, added up exactly with math.fsum so the result is the same whatever version of
+    pandas or NumPy is installed. Their faster sums can differ in the last digit, which would change the
+    rounding and make the charts drift between computers."""
     s = series.dropna()
-    out = s.groupby(s.index.year).mean()
-    return out.round(2)
+    years = {}
+    for t, v in s.items():
+        years.setdefault(t.year, []).append(float(v))
+    return pd.Series({y: round(math.fsum(vs) / len(vs), 2) for y, vs in years.items()})
 
 
 # The findings --------------------------------------------------------------------------------
