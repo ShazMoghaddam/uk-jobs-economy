@@ -72,3 +72,13 @@ def test_every_chart_in_the_report_exists(report):
     for name in charts:
         svg = (ROOT / "charts" / name).read_text(encoding="utf-8")
         assert svg.startswith("<svg") and "No data yet" not in svg, name
+
+
+def test_readme_generated_blocks_are_filled_in():
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    for name in ("tiles", "key-findings"):
+        block = readme.split(f"<!-- {name}:start -->")[1].split(f"<!-- {name}:end -->")[0]
+        assert len(block.strip()) > 100, f"the {name} block in README.md is empty"
+        assert "{" not in block and not re.search(r"\b(nan|None|NaT)\b", block), name
+    for name in re.findall(r"\(charts/([\w-]+\.svg)\)|src=\"charts/([\w-]+\.svg)\"", readme):
+        assert (ROOT / "charts" / (name[0] or name[1])).exists(), name

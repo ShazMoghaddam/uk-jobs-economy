@@ -41,13 +41,14 @@ jobs:
             data/sources.json
             charts/*.svg
             findings/README.md
+            README.md
           commit-message: "Update data and charts to ${{ steps.period.outputs.label }}"
           title: "Update data and charts to ${{ steps.period.outputs.label }}"
           body: |
             New figures from the ONS. This pull request was opened automatically by the **Refresh data** workflow.
 
             - Downloaded the latest data with `data/fetch.py`
-            - Redrew every chart and rewrote the [State of UK jobs](findings/README.md) report with `findings/build.py`
+            - Redrew every chart, rewrote the [State of UK jobs](findings/README.md) report and refreshed the key findings in the README with `findings/build.py`
             - Ran the checks in `tests/`
 
             Have a quick look at the report and charts, then merge.

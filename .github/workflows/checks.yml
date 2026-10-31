@@ -20,4 +20,4 @@ jobs:
       - run: python findings/build.py
       - run: pytest -q
       - name: Charts and report match the code
-        run: git diff --exit-code -- charts findings/README.md || (echo "Run python findings/build.py and commit the results" && exit 1)
+        run: git diff --exit-code -- charts findings/README.md README.md || (echo "Run python findings/build.py and commit the results" && exit 1)
