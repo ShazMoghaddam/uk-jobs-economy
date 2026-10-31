@@ -4,6 +4,7 @@ numbers always agree. Run from the repository root:
     python challenges/2026-12-where-did-the-workers-go/make_charts.py
 """
 
+import math
 import random
 from pathlib import Path
 
@@ -15,12 +16,16 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 
 random.seed(2026)  # stable gradient ids, so rerunning gives identical files
-data = pd.read_csv(ROOT / "data" / "labour_market.csv", parse_dates=["date"]).set_index("date")
+data = pd.read_csv(ROOT / "data" / "labour_market.csv", parse_dates=["date"], date_format="%Y-%m").set_index("date")
 
 
 def yearly(column: str) -> pd.Series:
+    """Yearly averages, summed exactly so every computer draws the same chart."""
     s = data[column].dropna()
-    return s.groupby(s.index.year).mean().round(1)
+    years = {}
+    for t, v in s.items():
+        years.setdefault(t.year, []).append(float(v))
+    return pd.Series({y: round(math.fsum(vs) / len(vs), 1) for y, vs in years.items()})
 
 
 def axis(years) -> list[str]:

@@ -17,7 +17,7 @@ DATA = ROOT / "data"
 
 @pytest.fixture(scope="module")
 def lm() -> pd.DataFrame:
-    return pd.read_csv(DATA / "labour_market.csv", parse_dates=["date"]).set_index("date")
+    return pd.read_csv(DATA / "labour_market.csv", parse_dates=["date"], date_format="%Y-%m").set_index("date")
 
 
 @pytest.fixture(scope="module")

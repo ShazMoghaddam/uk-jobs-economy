@@ -32,7 +32,7 @@ REASONS = {
 
 
 def main() -> None:
-    data = pd.read_csv(ROOT / "data" / "labour_market.csv", parse_dates=["date"]).set_index("date")
+    data = pd.read_csv(ROOT / "data" / "labour_market.csv", parse_dates=["date"], date_format="%Y-%m").set_index("date")
     reasons = data[list(REASONS)].dropna().rename(columns=REASONS)
 
     latest = reasons.index[-1]
