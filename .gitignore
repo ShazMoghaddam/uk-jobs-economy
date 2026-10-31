@@ -1,0 +1,17 @@
+# Submissions: link to the source data instead of committing it
+*.csv
+*.xlsx
+*.zip
+# The project's own tidy data files are small and kept, so charts can be rebuilt offline
+!data/*.csv
+
+# Python
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+.pytest_cache/
+
+# macOS
+.DS_Store
+# The long-format file is rebuilt by data/fetch.py and is too big to keep in git
+data/labour_market_long.csv

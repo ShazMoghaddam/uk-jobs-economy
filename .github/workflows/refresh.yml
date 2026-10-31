@@ -1,0 +1,54 @@
+name: Refresh data
+
+# ONS publishes labour market figures once a month, usually on a Tuesday in the middle of the month.
+# This checks every Wednesday morning and, if anything changed, opens a pull request with the new data,
+# redrawn charts and an updated report, ready to review and merge. Nothing is pushed to main directly.
+on:
+  schedule:
+    - cron: "17 9 * * 3"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install -r requirements.txt pytest
+      - name: Download the latest figures
+        run: python data/fetch.py
+      - name: Redraw charts and rewrite the report
+        run: python findings/build.py
+      - name: Check the results
+        run: pytest -q
+      - name: Find the latest period
+        id: period
+        run: echo "label=$(python -c "import json; print(json.load(open('data/sources.json'))['series']['unemployment_rate']['last'])")" >> "$GITHUB_OUTPUT"
+      - name: Open a pull request if anything changed
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: data/refresh
+          delete-branch: true
+          add-paths: |
+            data/*.csv
+            data/sources.json
+            charts/*.svg
+            findings/README.md
+          commit-message: "Update data and charts to ${{ steps.period.outputs.label }}"
+          title: "Update data and charts to ${{ steps.period.outputs.label }}"
+          body: |
+            New figures from the ONS. This pull request was opened automatically by the **Refresh data** workflow.
+
+            - Downloaded the latest data with `data/fetch.py`
+            - Redrew every chart and rewrote the [State of UK jobs](findings/README.md) report with `findings/build.py`
+            - Ran the checks in `tests/`
+
+            Have a quick look at the report and charts, then merge.
+          labels: data
