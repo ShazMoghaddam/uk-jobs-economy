@@ -1,0 +1,346 @@
+{
+  "fetched": "2026-10-31 13:20 UTC",
+  "licence": "Open Government Licence v3.0",
+  "credit": "Source: Office for National Statistics licensed under the Open Government Licence v3.0.",
+  "series": {
+    "unemployment_rate": {
+      "description": "Unemployment rate, aged 16+, %",
+      "cdid": "MGSX",
+      "ons_title": "Unemployment rate (aged 16 and over, seasonally adjusted): %",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/mgsx/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1971-02",
+      "last": "2026-07"
+    },
+    "employment_rate": {
+      "description": "Employment rate, aged 16 to 64, %",
+      "cdid": "LF24",
+      "ons_title": "Employment rate (aged 16 to 64, seasonally adjusted): %",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/timeseries/lf24/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1971-02",
+      "last": "2026-07"
+    },
+    "inactivity_rate": {
+      "description": "Economic inactivity rate, aged 16 to 64, %",
+      "cdid": "LF2S",
+      "ons_title": "LFS: Economic inactivity rate: UK: All: Aged 16-64: %: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity/timeseries/lf2s/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1971-02",
+      "last": "2026-07"
+    },
+    "unemployed_000s": {
+      "description": "People unemployed, aged 16+, thousands",
+      "cdid": "MGSC",
+      "ons_title": "LFS: Unemployed: UK: All: Aged 16+: 000s: SA: Annual = 4 quarter average",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/mgsc/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1971-02",
+      "last": "2026-07"
+    },
+    "employed_000s": {
+      "description": "People in employment, aged 16+, thousands",
+      "cdid": "MGRZ",
+      "ons_title": "Number of People in Employment (aged 16 and over, seasonally adjusted):000s",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/timeseries/mgrz/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1971-02",
+      "last": "2026-07"
+    },
+    "inactive_000s": {
+      "description": "People economically inactive, aged 16 to 64, thousands",
+      "cdid": "LF2M",
+      "ons_title": "LFS: Economically Inactive: UK: All: Aged 16-64: Thousands: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity/timeseries/lf2m/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1971-02",
+      "last": "2026-07"
+    },
+    "vacancies_000s": {
+      "description": "Job vacancies, UK, thousands",
+      "cdid": "AP2Y",
+      "ons_title": "UK Vacancies (thousands) - Total",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/timeseries/ap2y/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "2001-05",
+      "last": "2026-08"
+    },
+    "pay_growth_total": {
+      "description": "Average weekly earnings growth, total pay, % on a year earlier",
+      "cdid": "KAC3",
+      "ons_title": "AWE: Whole Economy Year on Year Three Month Average Growth (%): Seasonally Adjusted Total Pay Excluding Arrears",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/timeseries/kac3/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "2001-03",
+      "last": "2026-08"
+    },
+    "pay_growth_regular": {
+      "description": "Average weekly earnings growth, regular pay, % on a year earlier",
+      "cdid": "KAI9",
+      "ons_title": "AWE: Whole Economy Year on Year Three Month Average Growth (%): Seasonally Adjusted Regular Pay Excluding Arrears",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/timeseries/kai9/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "2001-03",
+      "last": "2026-08"
+    },
+    "real_pay_growth_total": {
+      "description": "Real average weekly earnings growth, total pay, % on a year earlier",
+      "cdid": "A3WW",
+      "ons_title": "AWE: Whole Economy Real Terms Year on Year Three Month Growth (%): Seasonally Adjusted Total Pay",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/timeseries/a3ww/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "2001-03",
+      "last": "2026-08"
+    },
+    "real_pay_growth_regular": {
+      "description": "Real average weekly earnings growth, regular pay, % on a year earlier",
+      "cdid": "A2FA",
+      "ons_title": "AWE: Whole Economy Real Terms Year on Year three Month Growth (%): Seasonally Adjusted Regular Pay",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/timeseries/a2fa/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "2001-03",
+      "last": "2026-08"
+    },
+    "inactive_students_000s": {
+      "description": "Inactive because studying, thousands",
+      "cdid": "LF63",
+      "ons_title": "LFS: Econ. inactivity reasons: Students: UK: 16-64: 000s: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity/timeseries/lf63/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1993-04",
+      "last": "2026-07"
+    },
+    "inactive_family_000s": {
+      "description": "Inactive because looking after family or home, thousands",
+      "cdid": "LF65",
+      "ons_title": "LFS: Econ. inactivity reasons: Looking after family/home: UK: 16-64: 000s: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity/timeseries/lf65/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1993-04",
+      "last": "2026-07"
+    },
+    "inactive_temp_sick_000s": {
+      "description": "Inactive because temporarily sick, thousands",
+      "cdid": "LF67",
+      "ons_title": "LFS: Econ. inactivity reasons: Temp sick: UK: 16-64: 000s: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity/timeseries/lf67/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1993-04",
+      "last": "2026-07"
+    },
+    "inactive_long_term_sick_000s": {
+      "description": "Inactive because long-term sick, thousands",
+      "cdid": "LF69",
+      "ons_title": "LFS: Econ. inactivity reasons: Long Term Sick: UK: 16-64:000s:SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity/timeseries/lf69/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1993-04",
+      "last": "2026-07"
+    },
+    "inactive_retired_000s": {
+      "description": "Inactive because retired (under 65), thousands",
+      "cdid": "LF6B",
+      "ons_title": "LFS: Econ. inactivity reasons: Retired: UK: 16-64:SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity/timeseries/lf6b/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1993-04",
+      "last": "2026-07"
+    },
+    "inactive_other_000s": {
+      "description": "Inactive for another reason, thousands",
+      "cdid": "LF6D",
+      "ons_title": "LFS: Econ. inactivity reasons: Other: UK: 16-64:000s:SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/economicinactivity/timeseries/lf6d/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1993-04",
+      "last": "2026-07"
+    },
+    "unemployment_rate_16_24": {
+      "description": "Unemployment rate, aged 16 to 24, %",
+      "cdid": "MGWY",
+      "ons_title": "LFS: Unemployment rate: UK: All: Aged 16-24: %: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/mgwy/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1992-04",
+      "last": "2026-07"
+    },
+    "unemployment_rate_25_34": {
+      "description": "Unemployment rate, aged 25 to 34, %",
+      "cdid": "YCGP",
+      "ons_title": "LFS: ILO unemployment rate: Aged 25-34: UK: All: %: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/ycgp/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1992-04",
+      "last": "2026-07"
+    },
+    "unemployment_rate_35_49": {
+      "description": "Unemployment rate, aged 35 to 49, %",
+      "cdid": "YCGV",
+      "ons_title": "LFS: ILO unemployment rate: Aged 35-49: UK: All: %: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/ycgv/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1992-04",
+      "last": "2026-07"
+    },
+    "unemployment_rate_50_64": {
+      "description": "Unemployment rate, aged 50 to 64, %",
+      "cdid": "LF2E",
+      "ons_title": "LFS: ILO unemployment rate: UK: All: Aged 50-64: %: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/lf2e/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1992-04",
+      "last": "2026-07"
+    },
+    "unemployment_rate_north_east": {
+      "description": "Unemployment rate, North East, %",
+      "cdid": "YCNC",
+      "ons_title": "LFS: ILO unemployment rate: North East: All: %: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/ycnc/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1992-04",
+      "last": "2026-07"
+    },
+    "unemployment_rate_north_west": {
+      "description": "Unemployment rate, North West, %",
+      "cdid": "YCND",
+      "ons_title": "LFS: ILO unemployment rate: North West (GOR): All: %: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/ycnd/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1992-04",
+      "last": "2026-07"
+    },
+    "unemployment_rate_yorkshire": {
+      "description": "Unemployment rate, Yorkshire and The Humber, %",
+      "cdid": "YCNE",
+      "ons_title": "LFS: ILO unemployment rate: Yorks & the Humber: All: %: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/ycne/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1992-04",
+      "last": "2026-07"
+    },
+    "unemployment_rate_east_midlands": {
+      "description": "Unemployment rate, East Midlands, %",
+      "cdid": "YCNF",
+      "ons_title": "LFS: ILO unemployment rate: East Midlands: All: %: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/ycnf/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1992-04",
+      "last": "2026-07"
+    },
+    "unemployment_rate_west_midlands": {
+      "description": "Unemployment rate, West Midlands, %",
+      "cdid": "YCNG",
+      "ons_title": "LFS: ILO unemployment rate: West Midlands: All: %: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/ycng/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1992-04",
+      "last": "2026-07"
+    },
+    "unemployment_rate_east": {
+      "description": "Unemployment rate, East of England, %",
+      "cdid": "YCNH",
+      "ons_title": "LFS: ILO unemployment rate: East: All: %: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/ycnh/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1992-04",
+      "last": "2026-07"
+    },
+    "unemployment_rate_london": {
+      "description": "Unemployment rate, London, %",
+      "cdid": "YCNI",
+      "ons_title": "LFS: ILO unemployment rate: London: All: %: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/ycni/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1992-04",
+      "last": "2026-07"
+    },
+    "unemployment_rate_south_east": {
+      "description": "Unemployment rate, South East, %",
+      "cdid": "YCNJ",
+      "ons_title": "LFS: ILO unemployment rate: South East (GOR): All: %: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/ycnj/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1992-04",
+      "last": "2026-07"
+    },
+    "unemployment_rate_south_west": {
+      "description": "Unemployment rate, South West, %",
+      "cdid": "YCNK",
+      "ons_title": "LFS: ILO unemployment rate: South West: All: %: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/ycnk/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1992-04",
+      "last": "2026-07"
+    },
+    "unemployment_rate_wales": {
+      "description": "Unemployment rate, Wales, %",
+      "cdid": "YCNM",
+      "ons_title": "LFS: ILO unemployment rate: Wales: All: %: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/ycnm/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1992-04",
+      "last": "2026-07"
+    },
+    "unemployment_rate_scotland": {
+      "description": "Unemployment rate, Scotland, %",
+      "cdid": "YCNN",
+      "ons_title": "LFS: ILO unemployment rate: Scotland: All: %: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/ycnn/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1992-04",
+      "last": "2026-07"
+    },
+    "unemployment_rate_northern_ireland": {
+      "description": "Unemployment rate, Northern Ireland, %",
+      "cdid": "ZSFB",
+      "ons_title": "LFS: ILO unemployment rate: Northern Ireland: All: %: SA",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/timeseries/zsfb/lms",
+      "released": "2026-10-19",
+      "next_release": "17 November 2026",
+      "first": "1992-04",
+      "last": "2026-07"
+    },
+    "payrolled_employees": {
+      "description": "Payrolled employees, UK, people",
+      "source": "HMRC PAYE Real Time Information, via ONS",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/realtimeinformationstatisticsreferencetableseasonallyadjusted",
+      "file": "https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/realtimeinformationstatisticsreferencetableseasonallyadjusted/current/rtisaoct2026.xlsx",
+      "note": "The latest month is a flash estimate and is often revised.",
+      "first": "2014-07",
+      "last": "2026-09"
+    }
+  }
+}
