@@ -44,16 +44,16 @@ This project does two things:
 ## Key findings
 
 <!-- key-findings:start -->
-### 2.74 million people are out of work because of long-term sickness
+### 2.68 million people are out of work because of long-term sickness
 
-That's up 620,000 since just before Covid. It's now the biggest single reason people aged 16 to 64 aren't working or looking for work.
+That's up 563,000 since just before Covid. It's now the biggest single reason people aged 16 to 64 aren't working or looking for work.
 
 ![Inactive people by reason, then and now](charts/inactivity-then-and-now.svg)
 
 ### Young people are finding it harder to get a start
 
-Among 16 to 24 year olds who are working or looking for work, **15.6%** are unemployed, up from
-11.8% just before Covid. For older age groups the rate is between 2.7% and 4.1%.
+Among 16 to 24 year olds who are working or looking for work, **15.1%** are unemployed, up from
+11.8% just before Covid. For older age groups the rate is between 2.7% and 4.0%.
 
 ![Unemployment by age](charts/unemployment-by-age.svg)
 
@@ -66,9 +66,9 @@ There are **0.41** vacancies for every unemployed person, against 0.59 just befo
 
 ### Two official sources disagree
 
-The Labour Force Survey says 1.40 million more people are in work than before Covid. HMRC payroll
+The Labour Force Survey says 1.44 million more people are in work than before Covid. HMRC payroll
 records peaked in Oct 2024 and have fallen by
-181,000 since. Which should you believe?
+215,000 since. Which should you believe?
 
 ![Survey against payroll](charts/survey-vs-payroll.svg)
 <!-- key-findings:end -->
