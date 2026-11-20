@@ -1,9 +1,9 @@
 # State of UK jobs
 
-**Latest data: Jun to Aug 2026.** Every number and chart on this page is worked out from ONS data by
+**Latest data: Jul to Sep 2026.** Every number and chart on this page is worked out from ONS data by
 [`build.py`](build.py), and redrawn automatically when ONS publishes new figures. Charts are drawn with [bezel-charts](https://pypi.org/project/bezel-charts/), an open-source Python library created by Shaz Moghaddam, the author of this project.
 
-Data last downloaded: 2026-11-04 17:14 UTC.
+Data last downloaded: 2026-11-18 18:02 UTC.
 
 ## 1. The headline numbers
 
@@ -21,12 +21,12 @@ Data last downloaded: 2026-11-04 17:14 UTC.
 
 Each tile shows the last three years. The big number is the latest figure.
 
-- **4.7%** of people who are working or looking for work are unemployed. That's
-  down 0.1 points on a year earlier.
-- **691,000** jobs were waiting to be filled in Jul to Sep 2026, against
-  **1.71 million** unemployed people.
-- Pay rose **3.7%** on a year earlier, in Jun to Aug 2026. After rising prices are taken
-  off, that's **0.7%**.
+- **4.6%** of people who are working or looking for work are unemployed. That's
+  down 0.4 points on a year earlier.
+- **690,000** jobs were waiting to be filled in Aug to Oct 2026, against
+  **1.68 million** unemployed people.
+- Pay rose **3.6%** on a year earlier, in Jul to Sep 2026. After rising prices are taken
+  off, that's **0.3%**.
 
 ## 2. Unemployment since 1971
 
@@ -40,7 +40,7 @@ Unemployment has risen sharply in every big downturn, then taken years to come b
 - **Covid** was a much smaller bump than many feared, peaking at **5.3%** in Oct to Dec 2020.
   Government furlough paid wages for millions of people, so most kept their jobs.
 
-More recently it climbed to **5.2%** in Oct to Dec 2025, and was 4.7% in Jun to Aug 2026.
+More recently it climbed to **5.2%** in Oct to Dec 2025, and was 4.6% in Jul to Sep 2026.
 
 The lowest rate on record was **3.4%**, in Oct to Dec 1973.
 
@@ -61,19 +61,19 @@ to compete for staff, often by paying more. Economists call this a **tight** lab
 
 ![Why people are economically inactive](../charts/inactivity-reasons.svg)
 
-**Economically inactive** means not working and not looking for work. In Jun to Aug 2026,
-**9.09 million** people aged 16 to 64 were inactive. Many have good reasons: they're studying,
+**Economically inactive** means not working and not looking for work. In Jul to Sep 2026,
+**9.07 million** people aged 16 to 64 were inactive. Many have good reasons: they're studying,
 caring for family or have retired early.
 
-The biggest group, though, is people who are **long-term sick**: **2.74 million**, or about 30% of everyone
+The biggest group, though, is people who are **long-term sick**: **2.68 million**, or about 30% of everyone
 inactive for a stated reason.
 
 ![Inactive people by reason, then and now](../charts/inactivity-then-and-now.svg)
 
-- Long-term sickness is up **620,000** since just before Covid.
+- Long-term sickness is up **563,000** since just before Covid.
 - When these figures began, in Mar to May 1993, the number was 1.81 million. It peaked at
   **2.85 million** in Sep to Nov 2023.
-- Among the other reasons, studying is up 288,000, family or home is down 313,000, retired early is down 38,000.
+- Among the other reasons, studying is up 306,000, family or home is down 281,000, retired early is down 61,000.
 
 This matters for the whole economy. Fewer people working means fewer people paying tax and more pressure on
 benefits and the NHS.
@@ -85,7 +85,7 @@ benefits and the NHS.
 **Real pay** is pay growth with rising prices taken off. If your pay rises 5% but prices rise 6%, your real pay
 has fallen 1%.
 
-- Right now real pay is growing **0.7%** a year, in the three months to Aug 2026.
+- Right now real pay is growing **0.3%** a year, in the three months to Sep 2026.
 - The worst point was **-5.5%** in the three months to Mar 2009, during the financial crisis.
 - Since 2001, real pay was falling in **99** of the monthly figures.
   The longest unbroken run of falls lasted from May 2010 to Feb 2014.
@@ -96,8 +96,8 @@ has fallen 1%.
 
 ![Unemployment by nation and region](../charts/unemployment-by-region.svg)
 
-In Jun to Aug 2026, unemployment was highest in **London (6.6%)** and lowest in
-**Northern Ireland (2.1%)**. The UK average was 4.7%, shown by the line.
+In Jul to Sep 2026, unemployment was highest in **London (6.4%)** and lowest in
+**Northern Ireland (2.2%)**. The UK average was 4.6%, shown by the line.
 
 London surprises many people. It has lots of well-paid jobs, but also many people looking for work, high living
 costs and a young, fast-moving population, so its rate is often above average.
@@ -112,11 +112,11 @@ trend over several months before reading too much into one figure.
 Young people always have higher unemployment: they're new to work, change jobs more and are often the first
 to go when firms cut back. But the gap has grown since Covid.
 
-- Among 16 to 24 year olds who are working or looking for work, **15.6%** are unemployed, against
+- Among 16 to 24 year olds who are working or looking for work, **15.1%** are unemployed, against
   **11.8%** just before Covid.
-- For older age groups the rate is between 2.7% and 4.1%.
-- Youth unemployment is up 1.0 points on a year earlier.
-  The last time it was this high was Apr to Jun 2015.
+- For older age groups the rate is between 2.7% and 4.0%.
+- Youth unemployment is down 0.2 points on a year earlier.
+  The last time it was this high was Aug to Oct 2020.
 
 ## 8. Do low unemployment and fast pay rises go together?
 
@@ -146,10 +146,10 @@ stronger than it really is. ONS is moving to a new online version, the Transform
 There's a second source. **HMRC payroll records** count everyone paid through PAYE, so they're based on real pay
 slips, not answers to a survey. They miss self-employed people, but they're a useful check.
 
-- Since just before Covid, the survey says the number of people in work rose by **1.40 million**,
-  to Jul 2026.
-- Payroll records peaked at **30.46 million** employees in Oct 2024. By Sep 2026
-  the figure was 181,000 lower.
+- Since just before Covid, the survey says the number of people in work rose by **1.44 million**,
+  to Aug 2026.
+- Payroll records peaked at **30.46 million** employees in Oct 2024. By Oct 2026
+  the figure was 215,000 lower.
 - So the two sources have been pointing in different directions. The truth is probably somewhere in between, and
   that's a good reminder to check more than one source before drawing big conclusions.
 
