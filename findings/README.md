@@ -3,7 +3,7 @@
 **Latest data: Jul to Sep 2026.** Every number and chart on this page is worked out from ONS data by
 [`build.py`](build.py), and redrawn automatically when ONS publishes new figures. Charts are drawn with [bezel-charts](https://pypi.org/project/bezel-charts/), an open-source Python library created by Shaz Moghaddam, the author of this project.
 
-Data last downloaded: 2026-11-18 18:02 UTC.
+Data last downloaded: 2026-11-25 19:15 UTC.
 
 ## 1. The headline numbers
 
